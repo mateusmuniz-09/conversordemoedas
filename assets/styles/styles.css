@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+body {
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+}
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+h1 {
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+.converter-form {
+  display: flex;
+  flex-direction: column;
+  grid-area: 20px;
+}
+.currency-row {
+  display: flex;
+  gap: 15px;
+  text-align: left;
+  align-items: end;
+}
+.currency-input {
+  flex: 2;
+}
+.currency-select {
+  flex: 1;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  background: #f8f9fa;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 15px;
+}
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #667eea;
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  text-align: left;
+  font-weight: 600;
+}
+
+.converter-btn {
+  background-image: linear-gradient(
+    to right,
+    #000428 0%,
+    #004e92 51%,
+    #000428 100%
+  );
+  border: none;
+  margin-top: 15px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.converter-btn:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.loading {
+  margin-top: 20px;
+  display: none;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 0 auto;
+  animation: spin 0.6s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.info {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+.result {
+  background: linear-gradient(45deg, #0080f8 0%, #0326c4 100%);
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: none;
+}
+
+.error {
+  background: linear-gradient(45deg, #ff6b6b, #f5576c);
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+  #toCurrency,
+  #fromCurrency {
+    font-size: 14px;
+  }
+}
